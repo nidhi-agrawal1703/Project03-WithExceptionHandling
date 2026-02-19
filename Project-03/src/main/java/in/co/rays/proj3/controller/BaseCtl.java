@@ -108,7 +108,10 @@ public abstract class BaseCtl extends HttpServlet {
 		
 	protected void service(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException{
 		// TODO Auto-generated method stub
+		String viewName = getView();
 		try {
+			
+			//System.out.println("name of current view is "+viewName);
 			preload(request);
 			
 			String op=DataUtility.getString(request.getParameter("operation"));
@@ -125,8 +128,8 @@ public abstract class BaseCtl extends HttpServlet {
 			 super.service(request, response);
 		}catch(DatabaseException e) {
 			e.printStackTrace();
-			String uri=request.getRequestURI();			
-			String finalView = ServletUtility.getViewName(uri);			
+			//String uri=request.getRequestURI();			
+			//String finalView = ServletUtility.getViewName(uri);			
 			//System.out.println("ViewName in basectl service"+finalView);
 			//List list=new ArrayList<>();
 			//ServletUtility.setList(list, request);
@@ -136,7 +139,7 @@ public abstract class BaseCtl extends HttpServlet {
 	        //System.out.println("In catch block of basectl");
 	        //System.out.println("URI in basectl service() method: "+result);
 	        //ServletUtility.forward(ORSView.LOGIN_VIEW,request, response);
-	        ServletUtility.forward(finalView, request, response);
+	        ServletUtility.forward(viewName, request, response);
 	        return;
 		}
 		//super.service(request,response);
