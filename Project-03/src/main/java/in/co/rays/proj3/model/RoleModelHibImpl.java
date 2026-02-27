@@ -128,7 +128,7 @@ public class RoleModelHibImpl implements RoleModelInt {
 			//throw new ApplicationException("Exception in list() of RoleMOdelHibImpl"+e.getMessage(),e);
 			throw new DatabaseException("Exception in database connection"+e.getMessage(),e);
 		}finally {
-			session.close();
+			HibDataSource.closeSession(session);//Session closes when session is not null
 		}
 		return list;
 	}

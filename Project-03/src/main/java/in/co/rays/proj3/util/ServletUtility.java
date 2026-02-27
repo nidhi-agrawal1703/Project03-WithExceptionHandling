@@ -1,6 +1,7 @@
 package in.co.rays.proj3.util;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -12,6 +13,7 @@ import org.hibernate.mapping.Set;
 
 import in.co.rays.proj3.dto.BaseDTO;
 import in.co.rays.proj3.exception.DuplicateRecordException;
+import in.co.rays.proj3.exception.PrimaryKeyNotFoundException;
 import in.co.rays.proj3.exception.RecordNotFoundException;
 import in.co.rays.proj3.controller.BaseCtl;
 import in.co.rays.proj3.controller.ORSView;
@@ -106,7 +108,11 @@ public class ServletUtility {
 	}
 
 	public static List getList(HttpServletRequest request) {
-		return (List) request.getAttribute("list");
+		List list=(List) request.getAttribute("list");
+		if(list==null) {
+			list=new ArrayList<>();
+		}
+		return list;
 	}
 
 	public static String getParameter(String property, HttpServletRequest request) {
@@ -158,6 +164,7 @@ public class ServletUtility {
 		
 		String recordErrorMessage="Not Found";
 		String duplicateErrorMessage="Already Exists";
+		String primaryKeyMessage="Not Found";
 				
 		if(e instanceof DuplicateRecordException) {
 			duplicateErrorMessage=className+" "+duplicateErrorMessage;
@@ -172,6 +179,13 @@ public class ServletUtility {
 				setDto(dto, request);
 			}
 			setErrorMessage(recordErrorMessage,request);
+		}
+		if(e instanceof PrimaryKeyNotFoundException) {
+			primaryKeyMessage=className+" "+primaryKeyMessage;
+			if(dto!=null) {
+				setDto(dto, request);
+			}
+			setErrorMessage(primaryKeyMessage,request);
 		}
 		
 		request.setAttribute("exception", e);

@@ -239,6 +239,15 @@ if(userLoggedIn){
           </div>
         </li>
         
+        <!-- BANNER -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button"  data-toggle="dropdown" style="color:white;">Banner</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="<%=ORSView.BANNER_CTL%>"><i class="fa fa-box"></i> Add Banner</a>
+            <a class="dropdown-item" href="<%=ORSView.BANNER_LIST_CTL%>"><i class="fa fa-list"></i> Banner List</a>
+          </div>
+        </li>
+        
         <!-- PROFILE / LOGOUT -->
         <li class="nav-item dropdown" style="padding-right: 40px;">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" style="color:white;">

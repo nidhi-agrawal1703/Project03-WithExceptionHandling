@@ -211,6 +211,17 @@ public class ModelFactory {
 		return companyModel;
 	}
 	
+	public BannerModelInt getBannerModel() {
+		BannerModelInt bannerModel=(BannerModelInt)modelCache.get("bannerModel");
+		if(bannerModel==null) {
+			if("Hibernate".equals(DATABASE)) {
+				bannerModel=new BannerModelHibImpl();
+			}
+			modelCache.put("bannerModel", bannerModel);
+		}
+		return bannerModel;
+	}
+	
 	public ProductModelInt getProductModel() {
 		ProductModelInt productModel=(ProductModelInt)modelCache.get("productModel");
 		if(productModel==null) {

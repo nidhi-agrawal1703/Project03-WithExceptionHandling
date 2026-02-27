@@ -3,6 +3,7 @@ package in.co.rays.proj3.model;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -168,7 +169,7 @@ public class RoleModelJDBCImpl implements RoleModelInt{
 		}
 	}
 
-	public List list() throws ApplicationException {
+	public List list() throws DatabaseException {
 
 		return list(0, 0);
 	}
@@ -181,7 +182,7 @@ public class RoleModelJDBCImpl implements RoleModelInt{
 	 * @return list
 	 * @throws ApplicationException
 	 */
-	public List list(int pageNo, int pageSize) throws ApplicationException {
+	public List list(int pageNo, int pageSize) throws DatabaseException {
 		log.debug("Model list Started");
 		ArrayList list = new ArrayList();
 		StringBuffer sql = new StringBuffer("select * from st_role");
@@ -210,9 +211,12 @@ public class RoleModelJDBCImpl implements RoleModelInt{
 				list.add(dto);
 			}
 			rs.close();
-		} catch (Exception e) {
+		} catch(SQLException e) {
+			throw new DatabaseException("Database Server Down",e);
+		}catch (Exception e) {
 			log.error("Database Exception..", e);
-			throw new ApplicationException("Exception : Exception in getting list of Role");
+			e.printStackTrace();
+			//throw new ApplicationException("Exception : Exception in getting list of Role");
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}

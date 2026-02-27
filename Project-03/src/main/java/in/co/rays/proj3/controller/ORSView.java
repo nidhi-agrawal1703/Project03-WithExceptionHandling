@@ -105,6 +105,12 @@ public interface ORSView {
 	public String CUSTOMER_LIST_VIEW = PAGE_FOLDER + "/CustomerListView.jsp";
 	public String CUSTOMER_LIST_CTL = APP_CONTEXT + "/ctl/CustomerListCtl";
 	
+	public String BANNER_VIEW = PAGE_FOLDER + "/BannerView.jsp";
+	public String BANNER_CTL = APP_CONTEXT + "/ctl/BannerCtl";
+	
+	public String BANNER_LIST_VIEW = PAGE_FOLDER + "/BannerListView.jsp";
+	public String BANNER_LIST_CTL = APP_CONTEXT + "/ctl/BannerListCtl";
+	
 	public String STAFF_VIEW = PAGE_FOLDER + "/StaffView.jsp";
 	public String STAFF_CTL = APP_CONTEXT + "/ctl/StaffCtl";
 	

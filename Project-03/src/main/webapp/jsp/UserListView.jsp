@@ -14,7 +14,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Student List</title>
+<title>User List</title>
 <link rel="icon" type="image/png" href="<%=ORSView.APP_CONTEXT%>/img/logo.png" sizes="16x16" />
  <style>
         body {
@@ -82,7 +82,7 @@
 				RoleModelInt rmodel = ModelFactory.getInstance().getRoleModel();
 
 				List list = ServletUtility.getList(request);
-				 if (list == null) {list = new ArrayList<>();}
+				 //if (list == null) {list = new ArrayList<>();}
 				Iterator<UserDTO> it = list.iterator();
 				if (list.size() != 0) {
 			%>					

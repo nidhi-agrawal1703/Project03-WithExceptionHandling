@@ -66,8 +66,12 @@
 	<%
 	int pageNo = ServletUtility.getPageNo(request);
 	int pageSize = ServletUtility.getPageSize(request);
+	int nextPageSize=0;
 	int index = ((pageNo - 1) * pageSize) + 1;
-	int nextPageSize = DataUtility.getInt(request.getAttribute("nextListSize").toString());
+	if(request.getAttribute("nextListSize")!=null){					
+		
+		nextPageSize = DataUtility.getInt(request.getAttribute("nextListSize").toString());
+		}
 
 	List<BannerDTO> list = (List<BannerDTO>) ServletUtility.getList(request);
 	
@@ -130,7 +134,7 @@
 							<td align="center"><%=dto.getImagePath()%></td>
 							<td align="center"><%=dto.getBannerStatus()%></td>
 							<td align="center"><a
-								href="CompanyCtl?id=<%=dto.getId()%>">Edit</a></td>
+								href="BannerCtl?id=<%=dto.getId()%>">Edit</a></td>
                     </tr>
 
                     

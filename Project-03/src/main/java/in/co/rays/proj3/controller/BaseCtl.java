@@ -145,5 +145,6 @@ public abstract class BaseCtl extends HttpServlet {
 		//super.service(request,response);
 		
 	}
+	
 	protected abstract String getView();
 }
