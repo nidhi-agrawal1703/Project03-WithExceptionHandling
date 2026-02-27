@@ -19,7 +19,7 @@ public interface BannerModelInt {
 		public List search(BannerDTO dto)throws ApplicationException,DatabaseException;
 		public List search(BannerDTO dto,int pageNo,int pageSize)throws ApplicationException,DatabaseException;
 		public BannerDTO findByPK(long pk)throws ApplicationException,DatabaseException,PrimaryKeyNotFoundException;
-		public BannerDTO findByBannerCode(String bannerCode)throws ApplicationException,DatabaseException;
+		
 
 	}
 
