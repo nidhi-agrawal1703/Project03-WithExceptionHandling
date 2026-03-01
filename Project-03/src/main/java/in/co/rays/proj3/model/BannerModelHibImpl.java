@@ -97,8 +97,7 @@ public class BannerModelHibImpl extends BaseModel<BannerDTO> implements BannerMo
 	}
 
 	@Override
-	public BannerDTO findByPK(long pk) throws ApplicationException, DatabaseException, PrimaryKeyNotFoundException {
-		
+	public BannerDTO findByPK(long pk) throws ApplicationException, DatabaseException, PrimaryKeyNotFoundException {		
 
 		BannerDTO dto = super.findByPK(pk);
 		return dto;

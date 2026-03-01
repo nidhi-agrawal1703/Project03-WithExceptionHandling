@@ -21,6 +21,7 @@
 		<property name="show_sql">true</property>
 		<property name="format_sql">true</property>
 		
+		<mapping resource="in/co/rays/proj3/hbm/AlertDTO.hbm.xml" />
 		<mapping resource="in/co/rays/proj3/hbm/BannerDTO.hbm.xml" />
 		<mapping resource="in/co/rays/proj3/hbm/CompanyDTO.hbm.xml" />
 		<mapping resource="in/co/rays/proj3/hbm/CouponDTO.hbm.xml" />

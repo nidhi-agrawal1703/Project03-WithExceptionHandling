@@ -222,6 +222,7 @@ public class ModelFactory {
 		return bannerModel;
 	}
 	
+	
 	public ProductModelInt getProductModel() {
 		ProductModelInt productModel=(ProductModelInt)modelCache.get("productModel");
 		if(productModel==null) {
