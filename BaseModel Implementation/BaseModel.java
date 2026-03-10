@@ -35,7 +35,7 @@ public abstract class BaseModel<T extends BaseDTO> {
 			session.save(dto);
 			tx.commit();
 		} catch (Exception e) {
-			// TODO: handle exception
+			
 			e.printStackTrace();
 			if (tx != null) {
 				tx.rollback();
@@ -60,7 +60,7 @@ public abstract class BaseModel<T extends BaseDTO> {
 			session.delete(dto);
 			tx.commit();
 		} catch (Exception e) {
-			// TODO: handle exception
+			
 			e.printStackTrace();
 			if (tx != null) {
 				tx.rollback();
@@ -84,7 +84,7 @@ public abstract class BaseModel<T extends BaseDTO> {
 			session.update(dto);
 			tx.commit();
 		} catch (Exception e) {
-			// TODO: handle exception
+			
 			e.printStackTrace();
 			if (tx != null) {
 				tx.rollback();
@@ -115,7 +115,7 @@ public abstract class BaseModel<T extends BaseDTO> {
 			}
 			list = criteria.list();
 		} catch (Exception e) {
-			// TODO: handle exception
+			
 			handleException(e);
 		} finally {
 			HibDataSource.closeSession(session);
@@ -134,7 +134,7 @@ public abstract class BaseModel<T extends BaseDTO> {
 				throw new PrimaryKeyNotFoundException("REcord Not Found at primary key");
 			}
 		} catch (HibernateException e) {
-			// TODO: handle exception
+		
 			handleException(e);
 
 		} finally {
@@ -167,7 +167,7 @@ public abstract class BaseModel<T extends BaseDTO> {
 			// System.out.println("UserList: "+list);
 
 		} catch (HibernateException e) {
-			// TODO: handle exception
+			
 			BaseModel.handleException(e);
 		} finally {
 			HibDataSource.closeSession(session);
@@ -190,7 +190,7 @@ public abstract class BaseModel<T extends BaseDTO> {
 				dto = (T) list.get(0);
 			}
 		} catch (HibernateException e) {
-			// TODO: handle exception
+			
 			e.printStackTrace();
 			throw new DatabaseException("Database SErver Down" + e.getMessage(), e);
 		} finally {
