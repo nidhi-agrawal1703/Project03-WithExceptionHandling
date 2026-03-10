@@ -49,8 +49,7 @@ public abstract class BaseModel<T extends BaseDTO> {
 	}
 
 	public void delete(T dto) throws ApplicationException, DatabaseException {
-		// TODO Auto-generated method stub
-
+	
 		Session session = null;
 		Transaction tx = null;
 
@@ -74,7 +73,7 @@ public abstract class BaseModel<T extends BaseDTO> {
 	}
 
 	public void update(T dto) throws ApplicationException, DuplicateRecordException, DatabaseException {
-		// TODO Auto-generated method stub
+		
 		Session session = null;
 		Transaction tx = null;
 
@@ -98,12 +97,12 @@ public abstract class BaseModel<T extends BaseDTO> {
 	}
 
 	public List list() throws ApplicationException, DatabaseException {
-		// TODO Auto-generated method stub
+		
 		return list(0, 0);
 	}
 
 	public List list(int pageNo, int pageSize) throws ApplicationException, DatabaseException {
-		// TODO Auto-generated method stub
+		
 		Session session = null;
 		List list = null;
 		try {
@@ -125,7 +124,7 @@ public abstract class BaseModel<T extends BaseDTO> {
 	}
 
 	public T findByPK(long pk) throws ApplicationException, DatabaseException, PrimaryKeyNotFoundException {
-		// TODO Auto-generated method stub
+		
 		Session session = null;
 		T dto = null;
 		try {
@@ -179,7 +178,7 @@ public abstract class BaseModel<T extends BaseDTO> {
 
 	
 	public T findByUniqueKey(String property, String value) throws ApplicationException, DatabaseException {
-		// TODO Auto-generated method stub
+		
 		Session session = null;
 		T dto = null;
 		try {
