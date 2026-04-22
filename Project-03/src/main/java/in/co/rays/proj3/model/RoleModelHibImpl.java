@@ -169,7 +169,6 @@ public class RoleModelHibImpl implements RoleModelInt {
 	}
 
 	public RoleDTO findByPK(long pk) throws ApplicationException {
-		// TODO Auto-generated method stub
 		Session session=HibDataSource.getSession();
 		try {
 			RoleDTO dto=(RoleDTO)session.get(RoleDTO.class, pk);
@@ -184,7 +183,6 @@ public class RoleModelHibImpl implements RoleModelInt {
 	}
 
 	public RoleDTO findByName(String name) throws ApplicationException {
-		// TODO Auto-generated method stub
 		Session session=null;
 		RoleDTO dto=null;
 		try {
@@ -197,7 +195,6 @@ public class RoleModelHibImpl implements RoleModelInt {
 				dto=(RoleDTO)list.get(0);
 			}
 		} catch (HibernateException e) {
-			// TODO: handle exception
 			throw new ApplicationException("Exception in getting role by login"+e.getMessage());
 		}finally {
 			session.close();

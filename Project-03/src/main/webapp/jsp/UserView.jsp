@@ -51,7 +51,7 @@ h1, h2, h3 {
 					<div class="card-body">
 						<%
 							long id = DataUtility.getLong(request.getParameter("id"));
-							if (dto.getFirstName() != null) {
+							if (dto.getId() != null && dto.getId()>0) {
 						%>
 						<h3 class="text-center text-primary pb-3">Update User</h3>
 						<%
@@ -114,8 +114,9 @@ h1, h2, h3 {
 								<input type="text" class="form-control" name="firstName"
 									placeholder="First Name"
 									value="<%=DataUtility.getStringData(dto.getFirstName())%>">
-								<%=ServletUtility.getErrorMessage("firstName", request)%>
-							</div>
+									</div>
+								<font color="red"><%=ServletUtility.getErrorMessage("firstName", request)%></font><br>
+							
 							<!-- Last Name -->
 							<label><b>Last Name</b><span style="color: red">*</span></label>
 							<div class="input-group mb-3">
@@ -127,11 +128,12 @@ h1, h2, h3 {
 								<input type="text" class="form-control" name="lastName"
 									placeholder="Last Name"
 									value="<%=DataUtility.getStringData(dto.getLastName())%>">
-								<%=ServletUtility.getErrorMessage("lastName", request)%>
-							</div>
+									</div>
+								<font color="red"><%=ServletUtility.getErrorMessage("lastName", request)%></font><br>
+							
 							
 							<!-- Login Id -->
-							<label><b>Email Id</b><span style="color: red">*</span></label>
+							<label><b>Login Id</b><span style="color: red">*</span></label>
 							<div class="input-group mb-3">
 								<div class="input-class-prepend">
 									<span class="input-group-text" id="basic-addon1"><i
@@ -141,8 +143,9 @@ h1, h2, h3 {
 								<input type="text" class="form-control" name="login"
 									placeholder="Login Id"
 									value="<%=DataUtility.getStringData(dto.getLogin())%>">
-								<%=ServletUtility.getErrorMessage("email", request)%>
-							</div>
+									</div>
+								<font color="red"><%=ServletUtility.getErrorMessage("login", request)%></font><br>
+							
 							
 							<!-- Password -->
 							<label><b>Password</b><span style="color: red">*</span></label>
@@ -155,8 +158,9 @@ h1, h2, h3 {
 								<input type="password" class="form-control" name="password"
 									placeholder="Password"
 									value="<%=DataUtility.getStringData(dto.getPassword())%>">
-								<%=ServletUtility.getErrorMessage("password", request)%>
-							</div>
+									</div>
+								<font color="red"><%=ServletUtility.getErrorMessage("password", request)%></font><br>
+							
 
 							<!-- Confirm Password -->
 							<label><b>Confirm Password</b><span style="color: red">*</span></label>
@@ -169,8 +173,9 @@ h1, h2, h3 {
 								<input type="password" class="form-control"
 									name="confirmPassword" placeholder="Confirm Password"
 									value="<%=DataUtility.getStringData(dto.getConfirmPassword())%>">
-								<%=ServletUtility.getErrorMessage("confirmPassword", request)%>
-							</div>
+								</div>
+								<font color="red"><%=ServletUtility.getErrorMessage("confirmPassword", request)%></font><br>
+							
 							
 							<!-- DOB -->
 							<label><b>Date of Birth</b><span style="color: red">*</span></label>
@@ -183,8 +188,9 @@ h1, h2, h3 {
 								<input type="text" readonly="readonly" id="udate" name="dob"
 									placeholder="Select Date of Birth"
 									value="<%=DataUtility.getDateString(dto.getDob())%>">
-								<%=ServletUtility.getErrorMessage("dob", request)%>
-							</div>
+									</div>
+								<font color="red"><%=ServletUtility.getErrorMessage("dob", request)%></font><br>
+							
 
 							<!-- Gender -->
 							<label><b>Gender</b><span style="color: red">*</span></label>
@@ -201,8 +207,9 @@ h1, h2, h3 {
 									String htmlList = HTMLUtility.getList("gender", dto.getGender(), map);
 								%>
 								<%=htmlList%>
-								<%=ServletUtility.getErrorMessage("gender", request)%>
-							</div>
+								</div>
+								<font color="red"><%=ServletUtility.getErrorMessage("gender", request)%></font><br>
+							
 
 							<!-- Role -->
 							<label><b>Role</b><span style="color: red">*</span></label>
@@ -216,8 +223,9 @@ h1, h2, h3 {
 									String htmlRoleList = HTMLUtility.getList("roleId", String.valueOf(dto.getRoleId()), roleList);
 								%>
 								<%=htmlRoleList%>
-								<%=ServletUtility.getErrorMessage("roleId", request)%>
-							</div>
+									</div>
+								<font color="red"><%=ServletUtility.getErrorMessage("roleId", request)%></font><br>
+							
 
 							<!-- Mobile No -->
 							<label><b>Mobile No</b><span style="color: red">*</span></label>
@@ -230,8 +238,9 @@ h1, h2, h3 {
 								<input type="text" class="form-control" name="mobileNo"
 									placeholder="Mobile No"
 									value="<%=DataUtility.getStringData(dto.getMobileNo())%>">
-								<%=ServletUtility.getErrorMessage("mobileNo", request)%>
-							</div>
+								 </div>
+								<font color="red"><%=ServletUtility.getErrorMessage("mobileNo", request)%></font><br>
+							
 
 
 							<!-- Buttons -->

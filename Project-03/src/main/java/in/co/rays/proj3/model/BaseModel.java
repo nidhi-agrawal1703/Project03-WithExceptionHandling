@@ -25,7 +25,7 @@ public abstract class BaseModel<T extends BaseDTO> {
 		this.persistentClass = persistentClass;
 	}
 
-	public Long add(T dto) throws DatabaseException, ApplicationException, DuplicateRecordException, DatabaseException {
+	public Long add(T dto) throws DatabaseException, ApplicationException, DuplicateRecordException {
 
 		Session session = null;
 		Transaction tx = null;
@@ -85,7 +85,6 @@ public abstract class BaseModel<T extends BaseDTO> {
 			session.update(dto);
 			tx.commit();
 		} catch (Exception e) {
-			// TODO: handle exception
 			e.printStackTrace();
 			if (tx != null) {
 				tx.rollback();

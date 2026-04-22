@@ -49,7 +49,7 @@
 						<%
 							long id = DataUtility.getLong(request.getParameter("id"));
 						
-							if(dto.getId()!=null){						
+							if(dto.getId() != null && dto.getId()>0){						
 						%>				
 						<h3 class="text-center text-primary pb-3">Update Course</h3>
 						<%}else { %>
@@ -86,8 +86,9 @@
  								</div>
  								<input type="text" class="form-control" name="name"
  									 placeholder="Name" value="<%=DataUtility.getStringData(dto.getCourseName())%>">
- 								<%=ServletUtility.getErrorMessage("name", request)%>	 
- 							</div>
+ 									 </div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("name", request)%></font><br>	 
+ 							
  							
 						
  						<!-- Duration -->
@@ -99,8 +100,9 @@
  								</div>
  								<input type="text" class="form-control" name="duration"
  									 placeholder="Duration" value="<%=DataUtility.getStringData(dto.getDuration())%>">	 
- 								<%=ServletUtility.getErrorMessage("duration", request)%>	 
- 							</div>
+ 									</div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("duration", request)%></font><br>	 
+ 							
 							
 							<!-- Description -->
  							<label><b>Description</b><span style="color:red">*</span></label>
@@ -111,8 +113,9 @@
  								</div>
  								<input type="text" class="form-control" name="description"
  									 placeholder="Description" value="<%=DataUtility.getStringData(dto.getDescription())%>">
- 								<%=ServletUtility.getErrorMessage("description", request)%>	 
- 							</div>
+ 									</div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("description", request)%></font><br>	 
+ 							
 							
 								
  							

@@ -55,7 +55,7 @@
 						<%
 							long id = DataUtility.getLong(request.getParameter("id"));
 						
-							if(dto.getId()!=null){						
+							if(dto.getId() != null && dto.getId()>0){						
 						%>				
 						<h3 class="text-center text-primary pb-3">Update Marksheet</h3>
 						<%}else { %>
@@ -97,8 +97,9 @@
  								<input type="text" class="form-control" name="rollNo"
  									 placeholder="RollNo" value="<%=DataUtility.getStringData(dto.getRollNo())%>" 
  									 <%=(dto.getId() !=null) ? "readonly" : ""%>>
- 								<%=ServletUtility.getErrorMessage("rollNo", request)%>	 
- 							</div>
+ 									 </div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("rollNo", request)%></font><br>	 
+ 							
  							
 						<!-- Name -->
  							<label><b>Name</b><span style="color:red">*</span></label>
@@ -108,8 +109,9 @@
  									
  								</div>
  								<%=HTMLUtility.getList("studentId", String.valueOf(dto.getStudentId()), l)%>
- 								<%=ServletUtility.getErrorMessage("studentId", request)%>	 
- 							</div>
+ 								</div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("studentId", request)%>	</font><br> 
+ 							
  						
  						<!-- Physics -->
  							<label><b>Physics</b><span style="color:red">*</span></label>
@@ -120,8 +122,10 @@
  								</div>
  								<input type="text" class="form-control" name="physics"
  									 placeholder="Physics" value="<%=DataUtility.getStringData(dto.getPhysics())%>">
- 								<%=ServletUtility.getErrorMessage("physics", request)%>	 
- 							</div>
+ 									</div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("physics", request)%></font><br>	 
+ 								
+ 						
 							
 							<!-- Chemistry -->
  							<label><b>Chemistry</b><span style="color:red">*</span></label>
@@ -132,8 +136,9 @@
  								</div>
  								<input type="text" class="form-control" name="chemistry"
  									 placeholder="Chemistry" value="<%=DataUtility.getStringData(dto.getChemistry())%>">
- 								<%=ServletUtility.getErrorMessage("chemistry", request)%>	 
- 							</div>
+ 									 </div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("chemistry", request)%></font><br>	 
+ 							
 							
 							<!-- Maths -->
  							<label><b>Maths</b><span style="color:red">*</span></label>
@@ -144,8 +149,9 @@
  								</div>
  								<input type="text" class="form-control" name="maths"
  									 placeholder="Maths" value="<%=DataUtility.getStringData(dto.getMaths())%>">
- 								<%=ServletUtility.getErrorMessage("maths", request)%>	 
- 							</div>
+									</div> 								
+ 								<font color="red"><%=ServletUtility.getErrorMessage("maths", request)%></font><br>	 
+ 							
 							 							
  							
  							

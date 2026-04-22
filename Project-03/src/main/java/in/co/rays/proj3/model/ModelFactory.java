@@ -3,7 +3,7 @@ package in.co.rays.proj3.model;
 import java.util.HashMap;
 import java.util.ResourceBundle;
 
-public class ModelFactory {
+public final class ModelFactory {
 
 	private static ResourceBundle rb=ResourceBundle.getBundle("in.co.rays.proj3.bundle.system");
 	private static final String DATABASE=rb.getString("DATABASE");

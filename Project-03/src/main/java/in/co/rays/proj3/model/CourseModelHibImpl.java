@@ -16,7 +16,6 @@ import in.co.rays.proj3.util.HibDataSource;
 public class CourseModelHibImpl implements CourseModelInt {
 
 	public long add(CourseDTO dto) throws ApplicationException, DuplicateRecordException {
-		// TODO Auto-generated method stub
 		Session session=null;
 		Transaction tx=null;
 		long pk=0;
@@ -31,7 +30,6 @@ public class CourseModelHibImpl implements CourseModelInt {
 			pk=dto.getId();
 			tx.commit();
 		} catch (Exception e) {
-			// TODO: handle exception
 			e.printStackTrace();
 			if(tx!=null) {
 				tx.rollback();
@@ -44,7 +42,6 @@ public class CourseModelHibImpl implements CourseModelInt {
 	}
 
 	public void delete(CourseDTO dto) throws ApplicationException {
-		// TODO Auto-generated method stub
 		Session session=null;
 		Transaction tx=null;
 		try {
@@ -53,7 +50,6 @@ public class CourseModelHibImpl implements CourseModelInt {
 			session.delete(dto);
 			tx.commit();
 		} catch (HibernateException e) {
-			// TODO: handle exception
 			e.printStackTrace();
 			if(tx!=null) {
 				tx.rollback();
@@ -66,7 +62,6 @@ public class CourseModelHibImpl implements CourseModelInt {
 	}
 
 	public void update(CourseDTO dto) throws ApplicationException, DuplicateRecordException {
-		// TODO Auto-generated method stub
 		Session session=null;
 		Transaction tx=null;
 		try {
@@ -75,9 +70,7 @@ public class CourseModelHibImpl implements CourseModelInt {
 			session.update(dto);
 			tx.commit();
 		} catch (Exception e) {
-			// TODO: handle exception
 			e.printStackTrace();
-			// TODO: handle exception
 			if (tx != null) {
 				tx.rollback();
 
@@ -89,12 +82,10 @@ public class CourseModelHibImpl implements CourseModelInt {
 	}
 
 	public List list() throws ApplicationException {
-		// TODO Auto-generated method stub
 		return list(0, 0);
 	}
 
 	public List list(int pageNo, int pageSize) throws ApplicationException {
-		// TODO Auto-generated method stub
 		Session session=null;
 		List list=null;
 		try {
@@ -107,7 +98,6 @@ public class CourseModelHibImpl implements CourseModelInt {
 			}
 			list=criteria.list();
 		} catch (HibernateException e) {
-			// TODO: handle exception
 			e.printStackTrace();
 			throw new ApplicationException("Exception in list in CourseModelHibImpl"+e.getMessage());
 		}finally {
@@ -117,12 +107,10 @@ public class CourseModelHibImpl implements CourseModelInt {
 	}
 
 	public List search(CourseDTO dto) throws ApplicationException {
-		// TODO Auto-generated method stub
 		return search(dto,0,0);
 	}
 
 	public List search(CourseDTO dto, int pageNo, int pageSize) throws ApplicationException {
-		// TODO Auto-generated method stub
 		Session session=null;
 		List list=null;
 		try {

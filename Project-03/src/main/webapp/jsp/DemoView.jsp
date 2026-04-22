@@ -50,7 +50,7 @@
 						<%
 							long id = DataUtility.getLong(request.getParameter("id"));
 						
-							if(dto.getId()!=null){						
+							if(dto.getId() != null && dto.getId()>0){						
 						%>				
 						<h3 class="text-center text-primary pb-3">Update Banner</h3>
 						<%}else { %>
@@ -114,8 +114,9 @@
  								</div>
  								<input type="text" class="form-control" name="imagePath" placeholder="Image Path"
  								value="<%=DataUtility.getStringData(dto.getImagePath())%>">
- 								<%=ServletUtility.getErrorMessage("imagePath", request)%>	 
- 							</div>
+ 								</div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("imagePath", request)%></font><br>	 
+ 							
  					
 							
 							<!-- Banner Status -->
@@ -127,8 +128,9 @@
  								</div>
  								<input type="text" class="form-control" name="bannerStatus" placeholder="Banner Status"
  								value="<%=DataUtility.getStringData(dto.getBannerStatus())%>">
- 								<%=ServletUtility.getErrorMessage("bannerStatus", request)%>	 
- 							</div>
+ 								</div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("bannerStatus", request)%></font><br>	 
+ 							
 																			
 								
  							

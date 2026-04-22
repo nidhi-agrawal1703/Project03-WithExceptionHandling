@@ -78,8 +78,9 @@
  								</div>
  								<input type="text" class="form-control" name="name"
  									 placeholder="College Name" value="<%=DataUtility.getStringData(dto.getName())%>">
- 								<%=ServletUtility.getErrorMessage("name", request)%>	 
- 							</div>
+ 									 </div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("name", request)%></font><br>	 
+ 							
 						<!-- Address -->
  							<label><b>Address</b><span style="color:red">*</span></label>
  							<div class="input-group mb-3">
@@ -89,8 +90,9 @@
  								</div>
  								<input type="text" class="form-control" name="address"
  									 placeholder="College Address" value="<%=DataUtility.getStringData(dto.getAddress())%>">
- 								<%=ServletUtility.getErrorMessage("address", request)%>	 
- 							</div>
+ 								</div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("address", request)%></font><br>	 
+ 							
  							<!-- State -->
  							<label><b>State</b><span style="color:red">*</span></label>
  							<div class="input-group mb-3">
@@ -100,8 +102,9 @@
  								</div>
  								<input type="text" class="form-control" name="state"
  									 placeholder="College State" value="<%=DataUtility.getStringData(dto.getState())%>">
- 								<%=ServletUtility.getErrorMessage("state", request)%>	 
- 							</div>
+ 								</div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("state", request)%></font><br>	 
+ 							
 						
 							<!-- City -->
  							<label><b>City</b><span style="color:red">*</span></label>
@@ -112,8 +115,9 @@
  								</div>
  								<input type="text" class="form-control" name="city"
  									 placeholder="College City" value="<%=DataUtility.getStringData(dto.getCity())%>">
- 								<%=ServletUtility.getErrorMessage("city", request)%>	 
- 							</div>
+									</div> 								
+ 								<font color="red"><%=ServletUtility.getErrorMessage("city", request)%></font><br>	 
+ 							
  							
  							<!-- Phone No -->
  							<label><b>Phone No</b><span style="color:red">*</span></label>
@@ -124,8 +128,9 @@
  								</div>
  								<input type="text" class="form-control" name="phoneNo"
  									 placeholder="Phone No" value="<%=DataUtility.getStringData(dto.getPhoneNo())%>">
- 								<%=ServletUtility.getErrorMessage("phoneNo", request)%>	 
- 							</div>
+ 								</div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("phoneNo", request)%></font><br>	 
+ 							
 						
 							<input type="hidden" name="id" value="<%=dto.getId()%>">
             				<input type="hidden" name="createdBy" value="<%=dto.getCreatedBy()%>">

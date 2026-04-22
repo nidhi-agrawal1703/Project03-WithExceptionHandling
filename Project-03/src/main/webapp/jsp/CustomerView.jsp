@@ -50,7 +50,7 @@
 						<%
 							long id = DataUtility.getLong(request.getParameter("id"));
 						
-							if(dto.getId()!=null){						
+							if(dto.getId() != null && dto.getId()>0){						
 						%>				
 						<h3 class="text-center text-primary pb-3">Update Customer</h3>
 						<%}else { %>
@@ -87,8 +87,9 @@
  								</div>
  								<input type="text" class="form-control" name="name"
  									 placeholder="Name" value="<%=DataUtility.getStringData(dto.getName())%>">
- 								<%=ServletUtility.getErrorMessage("name", request)%>	 
- 							</div>
+ 									 </div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("name", request)%></font><br>	 
+ 							
  							
 						
  						<!-- Location -->
@@ -101,8 +102,9 @@
  								
  								<input type="text" class="form-control" name="location" placeholder="Location" 
  								value="<%=DataUtility.getStringData(dto.getLocation())%>">
- 								<%=ServletUtility.getErrorMessage("location", request)%>	 
- 							</div>
+ 								</div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("location", request)%></font><br>	 
+ 							
 							
 							<!-- Mobile No -->
  							<label><b>Mobile No</b><span style="color:red">*</span></label>
@@ -113,8 +115,9 @@
  								</div>
  								<input type="text" class="form-control" name="mobileNo" placeholder="Mobile No"
  								value="<%=DataUtility.getStringData(dto.getMobileNo())%>">
- 								<%=ServletUtility.getErrorMessage("mobileNo", request)%>	 
- 							</div>
+ 								</div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("mobileNo", request)%></font><br>	 
+ 							
  							
  					
  							<!-- Importance -->
@@ -132,9 +135,9 @@
 											String htmlList1 = HTMLUtility.getList("importance", dto.getImportance(), map1);
 										%>
 										<%=htmlList1%>
-
- 								<%=ServletUtility.getErrorMessage("importance", request)%>	 
- 							</div>
+									</div>
+ 							<font color="red"><%=ServletUtility.getErrorMessage("importance", request)%></font><br>	 
+ 							
  							
  												
 								

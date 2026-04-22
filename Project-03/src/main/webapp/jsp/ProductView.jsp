@@ -54,7 +54,7 @@
 						<%
 							long id = DataUtility.getLong(request.getParameter("id"));
 						
-							if(dto.getId()!=null){						
+							if(dto.getId() != null && dto.getId()>0){						
 						%>				
 						<h3 class="text-center text-primary pb-3">Update Product</h3>
 						<%}else { %>
@@ -91,8 +91,9 @@
  								</div>
  								<input type="text" class="form-control" name="productName"
  									 placeholder="Product Name" value="<%=DataUtility.getStringData(dto.getProductName())%>">
- 								<%=ServletUtility.getErrorMessage("productName", request)%>	 
- 							</div>
+ 								</div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("productName", request)%></font><br>	 
+ 							
  							
 						<!-- Product Category -->
  							<label><b>Product Category</b><span style="color:red">*</span></label>
@@ -103,8 +104,9 @@
  								</div>
  								<input type="text" class="form-control" name="productCategory"
  									 placeholder="Product Category" value="<%=DataUtility.getStringData(dto.getProductCategory())%>">
- 								<%=ServletUtility.getErrorMessage("productCategory", request)%>	 
- 							</div>
+									</div> 								
+ 								<font color="red"><%=ServletUtility.getErrorMessage("productCategory", request)%></font><br>	 
+ 							
  						
 							
 		
@@ -117,8 +119,9 @@
  								</div>
  								<input type="text" class="form-control" name="productAmount"
  									 placeholder="Product Amount" value="<%=DataUtility.getStringData(dto.getProductAmount())%>">
- 								<%=ServletUtility.getErrorMessage("productAmount", request)%>	 
- 							</div>
+									</div> 								
+ 								<font color="red"><%=ServletUtility.getErrorMessage("productAmount", request)%></font><br>	 
+ 							
  							
  							
  							<!-- Purchase Date -->
@@ -129,8 +132,9 @@
  									
  								</div>
  								<input type="text" id="udate" readonly="readonly" name="purchaseDate" placeholder="Select Purchase Date" value="<%=DataUtility.getDateString(dto.getPurchaseDate())%>">
- 								<%=ServletUtility.getErrorMessage("purchaseDate", request)%>	 
- 							</div>
+ 									</div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("purchaseDate", request)%></font><br>
+ 							
  							
  												
 								

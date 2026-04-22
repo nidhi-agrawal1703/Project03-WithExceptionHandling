@@ -54,7 +54,7 @@ h1,h2,h3{
 				<div class="card-body">
 					<%
 							Long id=DataUtility.getLong(request.getParameter("id"));
-							if(dto.getId()!=null){						
+							if(dto.getId() != null && dto.getId()>0){						
 						%>				
 						<h3 class="text-center text-primary pb-3">Update Role</h3>
 						<%}else { %>
@@ -90,8 +90,11 @@ h1,h2,h3{
  								</div>
  								<input type="text" class="form-control" name="name"
  									 placeholder="Name" value="<%=DataUtility.getStringData(dto.getName())%>">
- 								<%=ServletUtility.getErrorMessage("name", request)%>	 
- 							</div>
+ 									 </div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("name", request)%></font><br>	 
+ 						
+ 							
+ 							
  							<!-- Description -->
  							<label><b>Description</b><span style="color:red">*</span></label>
  							<div class="input-group mb-3">
@@ -101,8 +104,9 @@ h1,h2,h3{
  								</div>
  								<input type="text" class="form-control" name="description"
  									 placeholder="Description" value="<%=DataUtility.getStringData(dto.getDescription())%>">
- 								<%=ServletUtility.getErrorMessage("description", request)%>	 
- 							</div>
+ 								</div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("description", request)%></font><br>	 
+ 							
  								
 						<!-- Hidden Fields -->
 							<input type="hidden" name="id" value="<%=dto.getId()%>">

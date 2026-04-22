@@ -89,8 +89,9 @@
  								</div>
  								<input type="text" class="form-control" name="name"
  									 placeholder="Subject Name" value="<%=DataUtility.getStringData(dto.getName())%>">
- 								<%=ServletUtility.getErrorMessage("name", request)%>	 
- 							</div>
+ 									 </div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("name", request)%></font><br>	 
+ 							
  							
 						
  						<!-- Course -->
@@ -101,8 +102,9 @@
  									
  								</div>
  								 <%=HTMLUtility.getList("courseId", String.valueOf(dto.getCourseId()), courseList)%>
- 								<%=ServletUtility.getErrorMessage("courseId", request)%>	 
- 							</div>
+ 								</div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("courseId", request)%></font><br>	 
+ 							
 							
 							<!-- Description -->
  							<label><b>Description</b><span style="color:red">*</span></label>
@@ -113,8 +115,9 @@
  								</div>
  								<input type="text" class="form-control" name="description"
  									 placeholder="Description" value="<%=DataUtility.getStringData(dto.getDescription())%>">
- 								<%=ServletUtility.getErrorMessage("description", request)%>	 
- 							</div>
+ 								</div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("description", request)%></font><br>	 
+ 							
 							
 								
  							

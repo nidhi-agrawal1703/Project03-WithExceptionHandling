@@ -50,7 +50,7 @@
 						<%
 							long id = DataUtility.getLong(request.getParameter("id"));
 						
-							if(dto.getId()!=null){						
+							if(dto.getId() != null && dto.getId()>0){						
 						%>				
 						<h3 class="text-center text-primary pb-3">Update Company</h3>
 						<%}else { %>
@@ -114,8 +114,9 @@
  								</div>
  								<input type="text" class="form-control" name="employeeCount" placeholder="Employee Count"
  								value="<%=DataUtility.getStringData(dto.getEmployeeCount())%>">
- 								<%=ServletUtility.getErrorMessage("employeeCount", request)%>	 
- 							</div>
+ 								</div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("employeeCount", request)%></font><br>	 
+ 							
  					
 							
 							<!-- Opening Date -->
@@ -127,8 +128,9 @@
  								</div>
  								<input type="text" id="udatee" readonly="readonly" class="form-control" name="openingDate" placeholder="Opening Date" 
  								value="<%=DataUtility.getStringData(dto.getOpeningDate())%>">
- 								<%=ServletUtility.getErrorMessage("openingDate", request)%>	 
- 							</div>
+ 								</div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("openingDate", request)%></font><br>	 
+ 							
 																			
 								
  							

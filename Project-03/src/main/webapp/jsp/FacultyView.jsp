@@ -61,7 +61,7 @@
 						<%
 							long id = DataUtility.getLong(request.getParameter("id"));
 						
-							if(dto.getId()!=null){						
+							if(dto.getId() != null && dto.getId()>0){						
 						%>				
 						<h3 class="text-center text-primary pb-3">Update Faculty</h3>
 						<%}else { %>
@@ -98,8 +98,10 @@
  								</div>
  								<input type="text" class="form-control" name="firstName"
  									 placeholder="First Name" value="<%=DataUtility.getStringData(dto.getFirstName())%>">
- 								<%=ServletUtility.getErrorMessage("firstName", request)%>	 
- 							</div>
+ 									 </div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("firstName", request)%></font><br>	 
+ 							
+ 							
 						<!-- Last Name -->
  							<label><b>Last Name</b><span style="color:red">*</span></label>
  							<div class="input-group mb-3">
@@ -109,8 +111,9 @@
  								</div>
  								<input type="text" class="form-control" name="lastName"
  									 placeholder="Last Name" value="<%=DataUtility.getStringData(dto.getLastName())%>">
- 								<%=ServletUtility.getErrorMessage("lastName", request)%>	 
- 							</div>
+ 								</div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("lastName", request)%></font><br>	 
+ 							
  						
 							
 		
@@ -123,8 +126,9 @@
  								</div>
  								<input type="text" class="form-control" name="email"
  									 placeholder=Email Id" value="<%=DataUtility.getStringData(dto.getEmail())%>">
- 								<%=ServletUtility.getErrorMessage("email", request)%>	 
- 							</div>
+ 								</div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("email", request)%></font><br>	 
+ 							
  							
  							
  							<!-- DOB -->
@@ -135,8 +139,9 @@
  									
  								</div>
  								<input type="text" readonly="readonly" id="udate" name="dob" placeholder="Select Date of Birth" value="<%=DataUtility.getDateString(dto.getDob())%>">
- 								<%=ServletUtility.getErrorMessage("dob", request)%>	 
- 							</div>
+ 									</div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("dob", request)%></font><br>	 
+ 							
  							
  							<!-- Gender -->
  							<label><b>Gender</b><span style="color:red">*</span></label>
@@ -151,8 +156,9 @@
 							map.put("Female", "Female");
 							String htmlList = HTMLUtility.getList("gender", dto.getGender(), map);
 						%> <%=htmlList%>
- 								<%=ServletUtility.getErrorMessage("gender", request)%>	 
- 							</div>
+ 								</div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("gender", request)%></font><br>	 
+ 							
  							
  							<!-- Mobile No -->
  							<label><b>Mobile No</b><span style="color:red">*</span></label>
@@ -163,8 +169,9 @@
  								</div>
  								<input type="text" class="form-control" name="mobileNo"
  									 placeholder="Mobile No" value="<%=DataUtility.getStringData(dto.getMobileNo())%>">
- 								<%=ServletUtility.getErrorMessage("mobileNo", request)%>	 
- 							</div>
+ 								</div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("mobileNo", request)%></font><br>	 
+ 							
  		
  						<!-- College -->
  							<label><b>College</b><span style="color:red">*</span></label>
@@ -174,8 +181,9 @@
  									
  								</div>
  								 <%=HTMLUtility.getList("collegeId", String.valueOf(dto.getCollegeId()), collegeList)%>
- 								<%=ServletUtility.getErrorMessage("collegeId", request)%>	 
- 							</div>
+ 								</div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("collegeId", request)%></font><br>	 
+ 							
  							
  					
 						<!-- Course -->
@@ -186,7 +194,8 @@
  									
  								</div>
  								 <%=HTMLUtility.getList("courseId", String.valueOf(dto.getCourseId()), courseList)%>
- 								<%=ServletUtility.getErrorMessage("courseId", request)%>	 
+ 								 </div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("courseId", request)%></font><br>	 
  							</div>
  					
  					<!-- Subject -->
@@ -197,8 +206,9 @@
  									
  								</div>
  								 <%=HTMLUtility.getList("subjectId", String.valueOf(dto.getSubjectId()), subjectList)%>
- 								<%=ServletUtility.getErrorMessage("subjectId", request)%>	 
- 							</div>							
+ 								 </div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("subjectId", request)%></font><br>	 
+ 							
 							
 								
  							

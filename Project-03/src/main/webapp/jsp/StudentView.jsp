@@ -54,7 +54,7 @@ h1,h2,h3{
 					<div class="card-body">
 						<%
 							long id = DataUtility.getLong(request.getParameter("id"));						
-							if(dto.getFirstName()!=null){						
+							if(dto.getId() != null && dto.getId()>0){						
 						%>				
 						<h3 class="text-center text-primary pb-3">Update Student</h3>
 						<%}else { %>
@@ -96,8 +96,11 @@ h1,h2,h3{
  								</div>
  								<input type="text" class="form-control" name="firstName"
  									 placeholder="First Name" value="<%=DataUtility.getStringData(dto.getFirstName())%>">
- 								<%=ServletUtility.getErrorMessage("firstName", request)%>	 
- 							</div>
+ 									 </div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("firstName", request)%></font><br>	 
+ 							
+ 							
+ 							
 						<!-- Last Name -->
  							<label><b>Last Name</b><span style="color:red">*</span></label>
  							<div class="input-group mb-3">
@@ -107,8 +110,9 @@ h1,h2,h3{
  								</div>
  								<input type="text" class="form-control" name="lastName"
  									 placeholder="Last Name" value="<%=DataUtility.getStringData(dto.getLastName())%>">
- 								<%=ServletUtility.getErrorMessage("lastName", request)%>	 
- 							</div>
+									</div> 								
+ 								<font color="red"><%=ServletUtility.getErrorMessage("lastName", request)%></font><br>	 
+ 							
  							<!-- Email Id -->
  							<label><b>Email Id</b><span style="color:red">*</span></label>
  							<div class="input-group mb-3">
@@ -118,8 +122,9 @@ h1,h2,h3{
  								</div>
  								<input type="text" class="form-control" name="email"
  									 placeholder="Email Id" value="<%=DataUtility.getStringData(dto.getEmail())%>">
- 								<%=ServletUtility.getErrorMessage("email", request)%>	 
- 							</div>
+ 									</div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("email", request)%></font><br>	 
+ 							
 						
 							<!-- DOB -->
  							<label><b>Date of Birth</b><span style="color:red">*</span></label>
@@ -129,7 +134,8 @@ h1,h2,h3{
  									
  								</div>
  								<input type="text" id="udate" name="dob" placeholder="Select Date of Birth" value="<%=DataUtility.getDateString(dto.getDob())%>">
- 								<%=ServletUtility.getErrorMessage("dob", request)%>	 
+ 									</div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("dob", request)%></font><br>	 
  							</div>
  							
  							<!-- Gender -->
@@ -145,8 +151,9 @@ h1,h2,h3{
 							map.put("Female", "Female");
 							String htmlList = HTMLUtility.getList("gender", dto.getGender(), map);
 						%> <%=htmlList%>
- 								<%=ServletUtility.getErrorMessage("gender", request)%>	 
- 							</div>
+									</div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("gender", request)%></font><br>	 
+ 							
  							
  							<!-- College  -->
  							<label><b>College</b><span style="color:red">*</span></label>
@@ -156,8 +163,9 @@ h1,h2,h3{
  									
  								</div>
  								<td><%=HTMLUtility.getList("collegeId", String.valueOf(dto.getCollegeId()), l)%></td>
- 								<%=ServletUtility.getErrorMessage("collegeId", request)%>	 
- 							</div> 
+ 								</div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("collegeId", request)%></font><br>	 
+ 							
  							
  							
  							<!-- Mobile No -->
@@ -169,8 +177,9 @@ h1,h2,h3{
  								</div>
  								<input type="text" class="form-control" name="mobileNo"
  									 placeholder="Mobile No" value="<%=DataUtility.getStringData(dto.getMobileNo())%>">
- 								<%=ServletUtility.getErrorMessage("mobileNo", request)%>	 
- 							</div>
+ 								</div>	 
+ 								<font color="red"><%=ServletUtility.getErrorMessage("mobileNo", request)%></font><br>	 
+ 							
  							
 						<!-- Hidden Fields -->
 							<input type="hidden" name="id" value="<%=dto.getId()%>">

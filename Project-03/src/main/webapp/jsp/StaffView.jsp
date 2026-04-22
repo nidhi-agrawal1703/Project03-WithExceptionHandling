@@ -50,7 +50,7 @@
 						<%
 							long id = DataUtility.getLong(request.getParameter("id"));
 						
-							if(dto.getId()!=null){						
+							if(dto.getId() != null && dto.getId()>0){						
 						%>				
 						<h3 class="text-center text-primary pb-3">Update Staff</h3>
 						<%}else { %>
@@ -87,8 +87,9 @@
  								</div>
  								<input type="text" class="form-control" name="name"
  									 placeholder="Name" value="<%=DataUtility.getStringData(dto.getName())%>">
- 								<%=ServletUtility.getErrorMessage("name", request)%>	 
- 							</div>
+ 									 </div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("name", request)%></font><br>	 
+ 							
  							
 						
  						<!-- Joining Date -->
@@ -101,8 +102,9 @@
  								
  								<input type="text" class="udate" name="joiningDate" placeholder="Joining Date" 
  								value="<%=DataUtility.getStringData(dto.getJoiningDate())%>">
- 								<%=ServletUtility.getErrorMessage("joiningDate", request)%>	 
- 							</div>
+ 								</div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("joiningDate", request)%></font><br>	 
+ 							
 							
 							<!-- Division -->
  							<label><b>Division</b><span style="color:red">*</span></label>
@@ -119,9 +121,9 @@
 											String htmlList1 = HTMLUtility.getList("division", dto.getDivision(), map1);
 										%>
 										<%=htmlList1%>
-
- 								<%=ServletUtility.getErrorMessage("division", request)%>	 
- 							</div>
+									</div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("division", request)%></font><br>	 
+ 							
 							
 							
 							<!-- Previous Employer -->
@@ -133,8 +135,9 @@
  								</div>
  								<input type="text" class="form-control" name="previousEmployer" placeholder="Previous Employer"
  								value="<%=DataUtility.getStringData(dto.getPreviousEmployer())%>">
- 								<%=ServletUtility.getErrorMessage("previousEmployer", request)%>	 
- 							</div>
+ 								</div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("previousEmployer", request)%></font><br>	 
+ 							
  							 							
 							<input type="hidden" name="id" value="<%=dto.getId()%>">
             				<input type="hidden" name="createdBy" value="<%=dto.getCreatedBy()%>">

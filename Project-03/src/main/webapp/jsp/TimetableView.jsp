@@ -60,7 +60,7 @@
 						<%
 							long id = DataUtility.getLong(request.getParameter("id"));
 						
-							if(dto.getId()!=null){						
+							if(dto.getId() != null && dto.getId()>0){						
 						%>				
 						<h3 class="text-center text-primary pb-3">Update Timetable</h3>
 						<%}else { %>
@@ -96,8 +96,9 @@
  									
  								</div>
  								<%=HTMLUtility.getList("courseId", String.valueOf(dto.getCourseId()), l)%>
- 								<%=ServletUtility.getErrorMessage("courseId", request)%>	 
- 							</div>
+ 								</div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("courseId", request)%></font><br>	 
+ 							
  						
 						<!-- Subject -->
  							<label><b>Subject</b><span style="color:red">*</span></label>
@@ -107,8 +108,9 @@
  									
  								</div>
  								<%=HTMLUtility.getList("subjectId", String.valueOf(dto.getSubjectId()), li)%>
- 								<%=ServletUtility.getErrorMessage("subjectId", request)%>	 
- 							</div>
+ 								</div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("subjectId", request)%>	</font><br> 
+ 							
 							
 		
  							<!-- Semester -->
@@ -134,8 +136,9 @@
 											String htmlList = HTMLUtility.getList("semesterId", dto.getSemester(), map);
 										%>
 										<%=htmlList%>
- 								<%=ServletUtility.getErrorMessage("semesterId", request)%>	 
- 							</div>
+ 								</div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("semesterId", request)%></font><br>	 
+ 							
  							
  							
  							<!-- Exam Date -->
@@ -146,8 +149,9 @@
  									
  								</div>
  								<input type="text" id="udate" name="examDate" placeholder="Select Exam Date" value="<%=DataUtility.getDateString(dto.getExamDate())%>">
- 								<%=ServletUtility.getErrorMessage("examDate", request)%>	 
- 							</div>
+ 								</div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("examDate", request)%></font><br>	 
+ 							
  							
  					
  							<!-- Exam Time -->
@@ -165,9 +169,9 @@
 											String htmlList1 = HTMLUtility.getList("examId", dto.getExamTime(), map1);
 										%>
 										<%=htmlList1%>
-
- 								<%=ServletUtility.getErrorMessage("examId", request)%>	 
- 							</div>
+									</div>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("examId", request)%></font><br>	 
+ 							
  							
  												
 								
